@@ -8,8 +8,7 @@ class NthChild {
         return function ({addVariant }) {
           addVariant('nth-child', ({ modifySelectors, separator }) => {
               modifySelectors(({ className }) => {
-                let css = '.nth-child' + "\\"+ separator + className  + `>*:nth-child(${nth})`
-                console.log(nth)
+                const css = `.nth-child\\${separator}${className}>*:nth-child(${nth})`
                 return css;
               });
           })
