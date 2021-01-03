@@ -4,7 +4,7 @@ class NthChild {
     }
 
     nthChild(){
-        const  nth  = this.nth;
+        const nth = this.nth;
         return function ({addVariant }) {
           addVariant('nth-child', ({ modifySelectors, separator }) => {
               modifySelectors(({ className }) => {
