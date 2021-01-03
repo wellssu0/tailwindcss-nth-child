@@ -1,6 +1,6 @@
 {
-  "name": "nth-child",
-  "version": "1.0.0",
+  "name": "tailwindcss-nth-child",
+  "version": "0.0.1",
   "description": "Nth Children Variants for Tailwindcss",
   "main": "index.js",
   "scripts": {
@@ -16,5 +16,7 @@
   "bugs": {
     "url": "https://github.com/kodcanlisi/tailwindcss-nth-child/issues"
   },
-  "homepage": "https://github.com/kodcanlisi/tailwindcss-nth-child#readme"
+  "homepage": "https://github.com/kodcanlisi/tailwindcss-nth-child#readme",
+  "dependencies": {
+  }
 }
