@@ -62,7 +62,7 @@ Lets test with **even** child
 ```jsx
 const  Example  =  ()  =>  {
 return  (
-<div className="nth-child:bg-red-400 transform first-child:rotate-45">
+<div className="nth-child:bg-red-400">
 	<div  className="">Example 1</div>
 	<div className="">Example 2</div>
 	<div className="">Example 3</div>
