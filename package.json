@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/kodcanlisi/tailwindcss-nth-child.git"
   },
-  "keywords": [],
+  "keywords": ["tailwindcss", "nth-child"],
   "author": "",
   "license": "ISC",
   "bugs": {

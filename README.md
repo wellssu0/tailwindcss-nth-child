@@ -13,17 +13,17 @@ tailwind.config.js
 Create an instance like this.
 ``` js
 const Nth =  require('tailwindcss-nth-child');
-const plugin =  new  Nth('<nth-value>')
+const <name_suffix> =  new  Nth('<name_suffix>','<nth-value>')
 module.exports = {
 // ...
 variants: {
     // extend the backgroundColor variants
     extend:{
-      backgroundColor: ['nth-child'],
+      backgroundColor: ['nth-child-<name_suffix>'],
     }
 },
 plugins: [
-    plugin.nthChild() // add-plugin
+    <name_suffix>.nthChild() // add-plugin
 ],
 }
 ```
@@ -34,51 +34,51 @@ Value of <nth-value\>
 --
 You need to give **nth-value** in constructor method. Check the below examples.
 
-### odd
-To select odd child:
-```js
-const plugin =  new  Nth('odd')
-```
-
-### even
-To select even child
-```js
-const plugin =  new  Nth('even')
-```
-### first child
-It is simple just write **1** inside of constructor method. To select first child:
-```js
-const plugin =  new  Nth('1')
-```
-### (x)n+(y)
-You can write which elements you want to select accordingly. You can check [here](https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child) for usage of css nth-child 
-```js
-const plugin =  new  Nth('2n+1')
-```
 
 Examples
 --
-Lets test with **even** child
+tailwind.config.js
 ```jsx
-const  Example  =  ()  =>  {
-return  (
-<div className="nth-child:bg-red-400">
-	<div  className="">Example 1</div>
-	<div className="">Example 2</div>
-	<div className="">Example 3</div>
-	<div className="">Example 4</div>
-	<div className="">Example 5</div>
-	<div className="">Example 6</div>
-</div>
-);
-};
+const Nth = require('tailwindcss-nth-child')
+const nth3n =  new  Nth('3n','3n+0') // Sub-elements that are multiples of 3
+const nth2n =  new  Nth('2n','2n+0') // Sub-elements that are multiples of 2  === new  Nth('even','even')
+const nth5 =  new  Nth('5','-n+5') // The first five child elements
+const nth4 =  new  Nth('4','-n+4') // The first four child elements
+
+module.exports = {
+// ...
+variants: {
+    // extend the backgroundColor variants
+    extend:{
+      borderWidth: [
+        'nth-child-2n',
+        'nth-child-3n',
+        'nth-child-4',
+        'nth-child-5',
+      ],
+    }
+},
+plugins: [
+    nth2n.nthChild(),
+    nth3n.nthChild(),
+    nth4.nthChild(),
+    nth5.nthChild(),
+  ],
+}
 ```
-Result:
-![enter image description here](https://i.imgur.com/kkx4k6w.png)
 
+xxx.tsx
+```html
+<div 
+    className='flex flex-wrap
+        nth-child-2n:border-r-0 
+        sm:nth-child-2n:border-r 
+        sm:nth-child-3n:border-r-0 
+        lg:nth-child-3n:border-r  
+        lg:nth-child-4:border-t 
+        xl:nth-child-5:border-t'
+>
+    // ...
+</div>
 
-
-## TO-DO
- - [x] Add nth-child selector
- - [ ] Add last-child selector
- - [ ] Add important modifier
+```
